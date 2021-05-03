@@ -46,10 +46,11 @@ public class slangwork {
                 System.out.println(tam);
                 break;
             case "3":
-                
+                System.out.println("Lich su tim kiem: ");
+                slangManager.show_search_history();
                 break;
             case "4":
-                
+                slangManager.AddNewSlangWord();
                 break;
             case "5":
                 
