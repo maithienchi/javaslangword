@@ -37,7 +37,7 @@ public class slangmanager {
     public void TimKiemTheoSlangWord(String slangword){
         int dem = 0;
         Date date = new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");//get time now  tham khao https://stackabuse.com/how-to-get-current-date-and-time-in-java/
 //      System.out.println(formatter.format(date));
 //        String tam="";
         for(slang p: slangList){
@@ -65,7 +65,7 @@ public class slangmanager {
 //                    
 //                }
 //            }
-            if(p.getKey().indexOf(str)>=0){
+            if(p.getKey().indexOf(str)>=0){ // so sanh gia tri co trong chuoi
 //                System.out.println("key: "+p.getKey()+"\n"+ "mean: "+p.getMean());
                 listWord.add(p.getKey());
                 dem++;
@@ -222,11 +222,11 @@ public class slangmanager {
 //            size--;
 //         
 //        }
-        slang[] arr = new slang[slangList.size()];
+        slang[] arr = new slang[slangList.size()];//tam mang moi chua danh sach slangword
             for (int i = 0; i < arr.length; i++) {
                 arr[i] = slangList.get(i);
             }
-        Collections.shuffle(Arrays.asList(arr));
+        Collections.shuffle(Arrays.asList(arr));//tao random slang word nguon https://stackoverflow.com/questions/1519736/random-shuffling-of-an-array
         slangList.clear();
         for(int i = 0 ;i < arr.length ;i++){
             slangList.add(arr[i]);
