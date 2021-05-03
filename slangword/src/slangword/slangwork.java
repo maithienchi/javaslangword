@@ -70,13 +70,17 @@ public class slangwork {
 //                slangManager.show();
                 break;
             case "8":
-//                
+//                System.out.println("Danh sach slang hien tai");
+//                slangManager.show();
+                slangManager.RandomSlangWord();
+//                System.out.println("danh sau khi random : ");
+//                slangManager.show();
                 break;
             case "9":
-                
+                slangManager.Cau9();
                 break;
             case "10":
-                
+                slangManager.Cau10();
                 break;
             case "11":
                 slangManager.show();
