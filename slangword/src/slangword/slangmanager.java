@@ -240,5 +240,92 @@ public class slangmanager {
 //        }
         System.out.println("Done");
     }
-    
+    public void Cau9(){
+        System.out.println("chon dap an dung trong 4 dap an: ");
+        slang tam = slangList.get(random.nextInt(slangList.size()));
+        List<String> listAns = new ArrayList<String>();
+        int dem = 0;
+        for (slang p: slangList){
+            if(p.getKey().compareTo(tam.getKey())!=0){
+                listAns.add(p.getMean());
+                dem++;
+            }
+            if(listAns.size()==3){
+                break;
+            }
+        }
+        
+        List<String> listDapAn = new ArrayList<>();
+        listDapAn.add("a");
+        listDapAn.add("b");
+        listDapAn.add("c");
+        listDapAn.add("d");
+        System.out.println("Cho key nhu sau: "+tam.getKey());
+        System.out.println("\n Co 4 dap an: ");
+        String dapan = listDapAn.get(random.nextInt(listDapAn.size()));
+        
+        listDapAn.remove(dapan);
+        String tam2="";
+        System.out.println("\n"+dapan+") "+tam.getMean());
+        tam2=listDapAn.get(random.nextInt(listDapAn.size()));
+        System.out.println("\n"+tam2+") "+listAns.get(0));
+        listDapAn.remove(tam2);
+        tam2=listDapAn.get(random.nextInt(listDapAn.size()));
+        System.out.println("\n"+tam2+") "+listAns.get(1));
+        listDapAn.remove(tam2);
+        tam2=listDapAn.get(random.nextInt(listDapAn.size()));
+        System.out.println("\n"+tam2+") "+listAns.get(2));
+        listDapAn.remove(tam2);
+        
+        System.out.println("\n Nhap vap dap an: ");
+        String chon = scanner.nextLine();
+        if(chon.compareTo(dapan)==0){
+            System.out.println("Ban da chien thang Congratulation");
+        }
+        else
+            System.out.println("Ban da thua cuoc :(((");
+    }
+    public  void Cau10(){
+        System.out.println("chon dap an dung trong 4 dap an: ");
+        slang tam = slangList.get(random.nextInt(slangList.size()));
+        List<String> listAns = new ArrayList<String>();
+        int dem = 0;
+        for (slang p: slangList){
+            if(p.getKey().compareTo(tam.getKey())!=0){
+                listAns.add(p.getKey());
+                dem++;
+            }
+            if(listAns.size()==3){
+                break;
+            }
+        }
+        
+        List<String> listDapAn = new ArrayList<>();
+        listDapAn.add("a");
+        listDapAn.add("b");
+        listDapAn.add("c");
+        listDapAn.add("d");
+        System.out.println("Cho definetion nhu sau: "+tam.getMean());
+        System.out.println("\n Co 4 dap an: ");
+        String dapan = listDapAn.get(random.nextInt(listDapAn.size()));
+        listDapAn.remove(dapan);
+        String tam2="";
+        System.out.println("\n"+dapan+") "+tam.getKey());
+        tam2=listDapAn.get(random.nextInt(listDapAn.size()));
+        System.out.println("\n"+tam2+") "+listAns.get(0));
+        listDapAn.remove(tam2);
+        tam2=listDapAn.get(random.nextInt(listDapAn.size()));
+        System.out.println("\n"+tam2+") "+listAns.get(1));
+        listDapAn.remove(tam2);
+        tam2=listDapAn.get(random.nextInt(listDapAn.size()));
+        System.out.println("\n"+tam2+") "+listAns.get(2));
+        listDapAn.remove(tam2);
+        System.out.println("\n Nhap vap dap an: ");
+        String chon = scanner.nextLine();
+        if(chon.compareTo(dapan)==0){
+            System.out.println("Ban da chien thang Congratulation");
+        }
+        else
+            System.out.println("Ban da thua cuoc :(((");
+    }
 }
