@@ -33,10 +33,17 @@ public class slangwork {
             choose = scanner.nextLine();
             switch (choose) {
             case "1":
-                
+                System.out.println("Nhap vao key can tim: ");
+                String key = scanner.nextLine();
+                slangManager.TimKiemTheoSlangWord(key);
                 break;
             case "2":
-                
+                System.out.println("Nhap vao key can tim: ");
+                key = scanner.nextLine();
+                List<String> tam = new ArrayList<>();
+                tam = slangManager.TimKiemTheoDefition(key);
+                System.out.println("Ket qua: ");
+                System.out.println(tam);
                 break;
             case "3":
                 
@@ -51,7 +58,7 @@ public class slangwork {
 //                
                 break;
             case "7":
-//               
+//                
                 break;
             case "8":
 //                
@@ -63,10 +70,11 @@ public class slangwork {
                 
                 break;
             case "11":
-                
+                slangManager.show();
                 break;
             case "0":
-                
+                System.out.println("Thoat!!");
+                exit = true;
                 break;
             default:
                 System.out.println("nhap sai! vui long chon dung hanh dong duoi menu:");
