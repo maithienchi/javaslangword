@@ -86,18 +86,19 @@ public class slangmanager {
         if(slangList.get(i).getKey().compareTo(key)==0){
             System.out.println("key: "+slangList.get(i).getKey()+"\n"+ "mean: "+slangList.get(i).getMean());
             System.out.println("Nhap vao mean can thay doi: ");
-            System.out.println("Nhap vao so luong mean: ");
-            int soluong = Integer.parseInt(scanner.nextLine());
-            for (int j=0;j<soluong;j++){
-                System.out.println("Nhap vao mean thu "+((int)(j+1))+": ");
-                if(j==0){
-                    listWord += scanner.nextLine();
-                }
-                else{
-                    listWord += " | "+scanner.nextLine();
-                }
-                
-            }
+//            System.out.println("Nhap vao so luong mean: ");
+//            int soluong = Integer.parseInt(scanner.nextLine());
+//            for (int j=0;j<soluong;j++){
+//                System.out.println("Nhap vao mean thu "+((int)(j+1))+": ");
+//                if(j==0){
+//                    listWord += scanner.nextLine();
+//                }
+//                else{
+//                    listWord += " | "+scanner.nextLine();
+//                }
+//                
+//            }
+            listWord = scanner.nextLine();
             slangList.get(i).setMean(listWord);
             slangwordDao.emtyfile("edit_history_path.txt");
             slangwordDao.writeEditSlang(slangList);
@@ -107,7 +108,6 @@ public class slangmanager {
     if(key==""){
         System.out.println("key not found, please input another key!!!");
     }
-    System.out.println("key: "+key+"\n"+ "mean: "+listWord);
     }
     public void AddNewSlangWord(){
         System.out.println("Nhap vao 1 slangword moi: ");
@@ -124,38 +124,40 @@ public class slangmanager {
                 int chon = Integer.parseInt(scanner.nextLine());
                 if(chon==1){
                     System.out.println("Nhap vao mean: : ");
-                    System.out.println("Nhap vao so luong mean: ");
-                    int soluong = Integer.parseInt(scanner.nextLine());
-                    for (int j=0;j<soluong;j++){
-                        System.out.println("Nhap vao mean thu "+((int)(j+1))+": ");
-                        if(j==0){
-                            mean += scanner.nextLine();
-                        }
-                        else{
-                            mean += " | "+scanner.nextLine();
-                        }
-
-                    }
+//                    System.out.println("Nhap vao so luong mean: ");
+//                    int soluong = Integer.parseInt(scanner.nextLine());
+//                    for (int j=0;j<soluong;j++){
+//                        System.out.println("Nhap vao mean thu "+((int)(j+1))+": ");
+//                        if(j==0){
+//                            mean += scanner.nextLine();
+//                        }
+//                        else{
+//                            mean += " | "+scanner.nextLine();
+//                        }
+//
+//                    }
+                    mean +=slangList.get(i).getMean()+ " | "+scanner.nextLine();
                     slang tam = new slang(key, mean);
-                    slangList.add(tam);
+                    slangList.get(i).setMean(mean);
                     slangwordDao.emtyfile("add_history_path.txt");
                     slangwordDao.writeAddSlang(slangList);
                     dem++;
                 }
                 else if(chon==2){
                     System.out.println("Nhap vao mean: : ");
-                    System.out.println("Nhap vao so luong mean: ");
-                    int soluong = Integer.parseInt(scanner.nextLine());
-                    for (int k=0;k<soluong;k++){
-                        System.out.println("Nhap vao mean thu "+((int)(k+1))+": ");
-                        if(k==0){
-                            mean += scanner.nextLine();
-                        }
-                        else{
-                            mean += " | "+scanner.nextLine();
-                        }
-
-                    }
+//                    System.out.println("Nhap vao so luong mean: ");
+//                    int soluong = Integer.parseInt(scanner.nextLine());
+//                    for (int k=0;k<soluong;k++){
+//                        System.out.println("Nhap vao mean thu "+((int)(k+1))+": ");
+//                        if(k==0){
+//                            mean += scanner.nextLine();
+//                        }
+//                        else{
+//                            mean += " | "+scanner.nextLine();
+//                        }
+//
+//                    }
+                    mean = scanner.nextLine();
                     slangList.get(i).setMean(mean);
                     slangwordDao.emtyfile("add_history_path.txt");
                     slangwordDao.writeAddSlang(slangList);
@@ -277,7 +279,7 @@ public class slangmanager {
         System.out.println("\n"+tam2+") "+listAns.get(2));
         listDapAn.remove(tam2);
         
-        System.out.println("\n Nhap vap dap an: ");
+        System.out.println("\n Nhap vao dap an: ");
         String chon = scanner.nextLine();
         if(chon.compareTo(dapan)==0){
             System.out.println("Ban da chien thang Congratulation");
@@ -320,7 +322,7 @@ public class slangmanager {
         tam2=listDapAn.get(random.nextInt(listDapAn.size()));
         System.out.println("\n"+tam2+") "+listAns.get(2));
         listDapAn.remove(tam2);
-        System.out.println("\n Nhap vap dap an: ");
+        System.out.println("\n Nhap vao dap an: ");
         String chon = scanner.nextLine();
         if(chon.compareTo(dapan)==0){
             System.out.println("Ban da chien thang Congratulation");

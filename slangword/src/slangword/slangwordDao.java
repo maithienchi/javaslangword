@@ -28,14 +28,14 @@ public class slangwordDao {
         List<slang> slangList = new ArrayList<slang>();
         try {
             File f = new File(slang_path);
-            if(f.exists() && !f.isDirectory()) { //Kiem tra file ton tai
+            if(f.exists() && !f.isDirectory()) { 
             }
             else{
                 System.out.println("Nhap vao lien ket den file slang.txt: ");
                 slang_path= scanner.nextLine();
             }
-            FileInputStream fstream = new FileInputStream(slang_path);
-            BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+            FileInputStream fstream = new FileInputStream(slang_path); 
+            BufferedReader br = new BufferedReader(new InputStreamReader(fstream));// tham khao nguon https://stackoverflow.com/questions/14657997/reading-from-file-and-splitting-the-data-in-java
             String strLine;
             while ((strLine = br.readLine()) != null) {
                 String[] splitOut = strLine.split("`");
@@ -185,9 +185,6 @@ public class slangwordDao {
             System.err.println("Error: " + e.getMessage());
         }
     }
-    
-   
-    
     
     
 }
