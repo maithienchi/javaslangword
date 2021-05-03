@@ -53,13 +53,21 @@ public class slangwork {
                 slangManager.AddNewSlangWord();
                 break;
             case "5":
-                
+                slangManager.editSlangWord();
             break;
             case "6":
-//                
+//                System.out.println("Danh sach slang hien tai");
+//                slangManager.show();
+                slangManager.DeleteSlangWord();
+//                System.out.println("danh sau khi Xoa: ");
+//                slangManager.show();
                 break;
             case "7":
-//                
+//                System.out.println("Danh sach slang hien tai");
+//                slangManager.show();
+                slangManager.ResetRootSlangWord();
+//                System.out.println("danh sau khi reset ve slang goc: ");
+//                slangManager.show();
                 break;
             case "8":
 //                
