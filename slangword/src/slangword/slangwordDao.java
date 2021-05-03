@@ -148,7 +148,43 @@ public class slangwordDao {
             System.err.println("Error: " + e.getMessage());
         }
     }
-    
+    public void writeAddSlang(List<slang> slangList){
+        try {
+            FileOutputStream fstream = new FileOutputStream(add_history_path);
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fstream));
+            for (slang s : slangList) {
+            bw.write(s.getKey()+"`"+s.getMean());
+            bw.newLine();
+        }
+        bw.close();
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+    }
+    public void writeDeleteSlang(List<slang> slangList){
+        try {
+            FileOutputStream fstream = new FileOutputStream(delete_history_path);
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fstream));
+            for (slang s : slangList) {
+            bw.write(s.getKey()+"`"+s.getMean());
+            bw.newLine();
+        }
+        bw.close();
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+    }
+    public  void emtyfile(String str){
+        try {
+            FileOutputStream fstream = new FileOutputStream(str);
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fstream));
+            bw.write("");
+        
+        bw.close();
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+    }
     
    
     
